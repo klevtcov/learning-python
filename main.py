@@ -8,4 +8,8 @@
 # b = int(input('Enter number'))
 # print (a * b)
 
+#a = int(input())
+#print(a > 0)
 
+a = int(input())
+print(10 <= a < 100)
