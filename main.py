@@ -200,3 +200,11 @@
 # 	b, c = c, b
 # print(a, '\n', b, '\n', c)
 
+# n = int(input())
+# programmers = 'программистов'
+# if ((n == 1) or (n % 10 == 1)) and (n % 100 != 11):
+#     programmers = 'программист'
+# elif (1 < n < 5) or (1 < n % 10 < 5) and not (11 < n % 100 < 15):
+#     programmers = 'программиста'   
+# print(n, programmers)
+# print(11 % 100)
