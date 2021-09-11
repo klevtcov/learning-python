@@ -103,28 +103,100 @@
 # pow — возведение в степень,
 # div — целочисленное деление.
 
-a, b, oper = float(input()), float(input()), input()
+# a, b, oper = float(input()), float(input()), input()
 
-if oper == '+':
-    print(a + b)
-elif oper == '-':
-    print(a - b)
-elif oper == '/':
-    if b == 0:
-        print('Деление на 0!')
-    else:
-        print(a / b)
-elif oper == '*':
-    print(a * b)
-elif oper == 'mod':
-    if b == 0:
-        print('Деление на 0!')
-    else:
-        print(a % b)
-elif oper == 'pow':
-    print(a ** b)
-elif oper == 'div':
-    if b == 0:
-        print('Деление на 0!')
-    else:
-        print(a // b)
+# if oper == '+':
+#     print(a + b)
+# elif oper == '-':
+#     print(a - b)
+# elif oper == '/':
+#     if b == 0:
+#         print('Деление на 0!')
+#     else:
+#         print(a / b)
+# elif oper == '*':
+#     print(a * b)
+# elif oper == 'mod':
+#     if b == 0:
+#         print('Деление на 0!')
+#     else:
+#         print(a % b)
+# elif oper == 'pow':
+#     print(a ** b)
+# elif oper == 'div':
+#     if b == 0:
+#         print('Деление на 0!')
+#     else:
+#         print(a // b)
+
+# a, b, oper = float(input()), float(input()), input()
+
+# if oper == '+':
+#     print(a + b)
+# elif oper == '-':
+#     print(a - b)
+# elif oper == '*':
+#     print(a * b)
+# elif oper == 'pow':
+#     print(a ** b)
+# elif b == 0:
+#     print('Деление на 0!')
+# elif oper == '/':
+#     print(a / b)
+# elif oper == 'div':
+#     print(a // b)
+# elif oper == 'mod':
+#     print(a % b)
+
+# t = input()
+# if t == 'треугольник':
+#     a, b, c = int(input()), int(input()), int(input())
+#     p = (a + b + c) / 2
+#     print((p * (p - a) * (p - b) * (p - c)) ** 0.5)
+# elif t == 'прямоугольник':
+#     a, b = int(input()), int(input())
+#     print(a * b)
+# elif t == 'круг':
+#     r = int(input())
+#     print(3.14 * r ** 2)
+
+# a, b, c = int(input()), int(input()), int(input())
+# max = 0
+# min = 0
+# another = 0
+# if a >= b and a >= c:
+#     max = a
+#     if b > c:
+#         min = c
+#         another = b
+#     else:
+#         min = b
+#         another = c
+# elif b >= a and b >= c:
+#     max = b
+#     if a > c:
+#         min = c
+#         another = a
+#     else:
+#         min = a
+#         another = c
+# elif c >= a and c >= b:
+#     max = c
+#     if a > b:
+#         min = b
+#         another = a
+#     else:
+#         min = a
+#         another = b
+# print (max, '\n', min, '\n', another)
+
+# a,b,c = int(input()), int(input()), int(input())
+
+# if a < b:
+# 	a, b = b, a
+# if a < c:
+# 	a, c = c, a
+# if b > c:
+# 	b, c = c, b
+# print(a, '\n', b, '\n', c)
+
