@@ -71,3 +71,60 @@
 # else:
 #     print('Обычный')
 
+# comment
+# x = 5 #comment
+
+# strings
+
+# a = 'string'
+# b = 'another string'
+# print(a, b)
+# print(a + b)
+
+# print(a)
+# '''
+# multiline
+# comment
+# '''
+# print(b)
+# print(a + '\n' + b) # print in two different lines
+
+# # площадь треугольника по формуле Герона
+# a, b, c = int(input()), int(input()), int(input())
+# p = (a + b + c) / 2
+# S = (p * (p - a) * (p - b) * (p - c)) ** 0.5 
+# print(S)
+
+# a = int(input())
+# print((-15 < a <= 12) or (14 < a < 17) or (a >= 19))
+
+# Поддерживаемые операции: +, -, /, *, mod, pow, div, где
+# mod — это взятие остатка от деления,
+# pow — возведение в степень,
+# div — целочисленное деление.
+
+a, b, oper = float(input()), float(input()), input()
+
+if oper == '+':
+    print(a + b)
+elif oper == '-':
+    print(a - b)
+elif oper == '/':
+    if b == 0:
+        print('Деление на 0!')
+    else:
+        print(a / b)
+elif oper == '*':
+    print(a * b)
+elif oper == 'mod':
+    if b == 0:
+        print('Деление на 0!')
+    else:
+        print(a % b)
+elif oper == 'pow':
+    print(a ** b)
+elif oper == 'div':
+    if b == 0:
+        print('Деление на 0!')
+    else:
+        print(a // b)
