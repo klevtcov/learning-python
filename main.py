@@ -208,3 +208,55 @@
 #     programmers = 'программиста'   
 # print(n, programmers)
 # print(11 % 100)
+
+# n=int(input())
+# print(n,'программист'+('ов' if n%10==0 or 4<n%10<10 or 10<n%100<15 else 'а' if 1<n%10<5 else ''))
+
+# a = str(input())
+# first = int(a[0]) + int(a[1]) + int(a[2])
+# second = int(a[3]) + int(a[4]) + int(a[5])
+# if first == second:
+#     print('Счастливый')
+# else:
+#     print('Обычный')
+
+# a, b, c, d, e, f = input()
+# n = int(a) + int(b) + int(c)
+# m = int(d) + int(e) + int(f)
+# if n == m:
+#     print ('Счастливый')
+# else:
+#     print ('Обычный')
+
+# n = int(input())
+# c = 1
+# while c <= n:
+#     print('*' * c)
+#     c += 1
+
+# stars = '*'
+# n = int(input())
+# while len(stars) <= n:
+#     print(stars)
+#     stars += '*'
+
+# print(0 % 2) # остаток от деления на 2 == 0!
+
+# a = int(input())
+# sum = a
+# while a != 0:
+#     a = int(input())
+#     sum += a
+# print(sum)
+
+# a = True
+# sum = 0
+# while a:
+#     a = int(input())
+#     sum += a
+# print(sum)
+
+a, b, d = int(input()), int(input()), 1
+while ((d % a != 0) or (d % b != 0)):
+    d += 1
+print(d)
