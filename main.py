@@ -256,7 +256,34 @@
 #     sum += a
 # print(sum)
 
-a, b, d = int(input()), int(input()), 1
-while ((d % a != 0) or (d % b != 0)):
-    d += 1
-print(d)
+# a, b, d = int(input()), int(input()), 1
+# while ((d % a != 0) or (d % b != 0)):
+#     d += 1
+# print(d)
+
+# a, b = int(input()), int(input())
+# d = a
+# while d % b:
+#     d += a
+# print(d)
+
+# i = 0
+# while i < 5:
+#     a, b = input().split()
+#     a = int(a)
+#     b = int(b)
+#     if (a == 0) and (b == 0):
+#         break # досрочное ззавершение цикла
+#     if (a == 0) or (b == 0):
+#         continue # переходим к следующей итерации
+#     print(a * b)
+#     i += 1
+
+# while True:
+#     a = int(input())
+#     if a < 10:
+#         continue
+#     elif a > 100:
+#         break
+#     print(a)
+
