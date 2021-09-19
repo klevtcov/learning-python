@@ -394,19 +394,44 @@
 # выводит закодированную последовательность на стандартный вывод. Кодирование должно 
 # учитывать регистр символов.
 
+# s = input()
+# short = ''
+# i = 1
+# cnt = 1
+# while i < (len(s)):
+#     if i == len(s) - 1:
+#         short += s[i] + str(cnt)
+#         break
+#     if s[i-1] == s[i]: 
+#         cnt += 1
+#         i += 1
+#         continue
+#     short += s[i-1] + str(cnt)
+#     i += 1
+#     cnt = 1
+# print(short)
+
 s = input()
 short = ''
-i = 1
+i = 0
 cnt = 1
-while i < (len(s)):
-    if i == len(s) - 1:
-        short += s[i] + str(cnt)
+while i < len(s):
+    if len(s) == 1:
+        short += s[i] + str(1)
         break
-    elif s[i] == s[i-1]: 
+    if i == len(s) - 2:
+        if s[i] == s[i + 1]:
+            short += s[i] + str(cnt + 1)
+            break
+        else:
+            short += s[i] + str(cnt)
+            short += s[i+1] + str(1)
+            break
+    if s[i] == s[i + 1]: 
         cnt += 1
         i += 1
         continue
-    short += s[i-1] + str(cnt)
+    short += s[i] + str(cnt)
     i += 1
     cnt = 1
 print(short)
