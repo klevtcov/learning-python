@@ -533,3 +533,40 @@
 #         print(a[i-1]+a[i+1-len(a)])
 # else:
 #     print(a[0])
+
+
+# Напишите программу, которая принимает на вход список чисел в одной 
+# строке и выводит на экран в одну строку значения, которые встречаются 
+# в нём более одного раза.
+
+# Для решения задачи может пригодиться метод sort списка.
+
+# Выводимые числа не должны повторяться, порядок их вывода может быть
+# произвольным.
+
+# Sample Input 1:
+# 4 8 0 3 4 2 0 3
+# [0, 0, 2, 3, 3, 4, 4, 8]
+# Sample Output 1:
+# 0 3 4
+
+a = [int(i) for i in input().split()]
+a.sort()
+i = 1
+n = 0
+while i < len(a):
+    if a[i-1] == a[i]:
+        n += 1
+    elif a[i-1] != a[i] and n > 0:
+        print(a[i-1], end=' ')
+        n = 0
+    i += 1
+    if i == len(a) and n > 0:
+        print(a[i-1], end=' ')
+
+a, b = [int(i) for i in input().split()], []
+for i in a:
+    if a.count(i) > 1 and b.count(i) == 0:
+        b.append(i)
+for i in b:
+    print(i, end=" ")
