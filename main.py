@@ -550,23 +550,57 @@
 # Sample Output 1:
 # 0 3 4
 
-a = [int(i) for i in input().split()]
-a.sort()
-i = 1
-n = 0
-while i < len(a):
-    if a[i-1] == a[i]:
-        n += 1
-    elif a[i-1] != a[i] and n > 0:
-        print(a[i-1], end=' ')
-        n = 0
-    i += 1
-    if i == len(a) and n > 0:
-        print(a[i-1], end=' ')
+# a = [int(i) for i in input().split()]
+# a.sort()
+# i = 1
+# n = 0
+# while i < len(a):
+#     if a[i-1] == a[i]:
+#         n += 1
+#     elif a[i-1] != a[i] and n > 0:
+#         print(a[i-1], end=' ')
+#         n = 0
+#     i += 1
+#     if i == len(a) and n > 0:
+#         print(a[i-1], end=' ')
 
-a, b = [int(i) for i in input().split()], []
-for i in a:
-    if a.count(i) > 1 and b.count(i) == 0:
-        b.append(i)
-for i in b:
-    print(i, end=" ")
+# a, b = [int(i) for i in input().split()], []
+# for i in a:
+#     if a.count(i) > 1 and b.count(i) == 0:
+#         b.append(i)
+# for i in b:
+#     print(i, end=" ")
+
+# ls = [int(i) for i in input().split()]
+# for i in set(ls):
+#     if ls.count(i) > 1:
+#         print(i, end=' ')
+
+# s = [int(i) for i in input().split()]
+# s.sort()
+# i = 0
+# while i < len(s):
+#     if s.count(s[i]) > 1:      # думаю, тут всё понятно
+#         print (s[i], end=' ')  
+#         i += s.count(s[i])     # прибавляем к индексу количество повторений текущего элемента,
+#                                # чтобы перескочить на первый отличающийся от текущего
+#     else:                      
+#         i += 1
+
+# n = 3
+# a = [[0] * n] * n
+# print(a)
+# a[0][0] = 5
+# print(a)
+
+# [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+# [[5, 0, 0], [5, 0, 0], [5, 0, 0]]
+
+# a = [[0] * n for i in range(n)]
+# a = [[0 for j in range(n)] for i in range(n)]
+# a[0][0] = 7
+# print(a)
+
+# [[7, 0, 0], [0, 0, 0], [0, 0, 0]]
+
+
