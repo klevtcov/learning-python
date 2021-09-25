@@ -692,24 +692,147 @@
 
 # Например, если n = 7, то программа должна вывести 1 2 2 3 3 3 4.
 
-Моё решение:
-n = int(input())
-i = 0
-a = []
-while len(a) < n:
-    for j in range(i):
-        a.append(i)
-    i += 1
-a = a[:n]
-for k in a:
-    print(k, end=' ')
+# Моё решение:
+# n = int(input())
+# i = 0
+# a = []
+# while len(a) < n:
+#     for j in range(i):
+#         a.append(i)
+#     i += 1
+# a = a[:n]
+# for k in a:
+#     print(k, end=' ')
 
-Оптимизированное:
-n = int(input())
-a = []
-i = 0
-while len(a) < n:
-    a += [i] * i
-    i += 1
-print(*a[:n]) -> * позволяет выводить через любой символ, по умолчанию - пробел.
-# строка выводит распакованный список a (* - unpucking) от начала до n-ного элемента не включительно.
+# Оптимизированное:
+# n = int(input())
+# a = []
+# i = 0
+# while len(a) < n:
+#     a += [i] * i
+#     i += 1
+# print(*a[:n]) -> * позволяет выводить через любой символ, по умолчанию - пробел.
+# # строка выводит распакованный список a (* - unpucking) от начала до n-ного элемента не включительно.
+
+# Без саммива:
+# n = int(input())
+# count = 0
+# curr = 1
+# for i in range(n):
+#     print(curr, end=' ')
+#     count += 1
+#     if count == curr:
+#         curr += 1
+#         count = 0
+
+# Загуглил последовательность, у нее оказалась готовая форма для любого элемента и 
+# соответственно печатаем его:
+# a(n)=floor(1/2+sqrt(2n))
+
+# import math
+# x = int(input())
+# print(*[int( 1/2 + math.sqrt(2 * n) ) for n in range(1, x + 1)])
+
+# Напишите программу, которая считывает список чисел lst из первой строки и число 
+# x из второй строки, которая выводит все позиции, на которых встречается число x 
+# в переданном списке lst.
+
+# Позиции нумеруются с нуля, если число xx не встречается в списке, вывести строку
+# "Отсутствует" (без кавычек, с большой буквы).
+
+# Позиции должны быть выведены в одну строку, по возрастанию абсолютного значения.
+# 5 8 2 7 8 8 2 4
+# 8
+# вывод: 1 4 5
+
+# Моё решение:
+# lst = [int(i) for i in input().split()]
+# x = int(input())
+# if lst.count(x) == 0:
+#     print('Отсутствует')
+# else:
+#     i = 0
+#     while i < len(lst):
+#         if lst[i] == x:
+#             print(i, end = ' ')
+#         i += 1
+
+# Оптимизированное:
+# lst = [int(i) for i in input().split()]
+# x = int(input())
+# if x not in lst:
+#     print('Отсутствует')
+# else:
+#     for i in range(len(lst)):
+#         if lst[i] == x: 
+#             print(i, end = ' ')
+
+# for i, a in enumerate(lst): 
+#     if a == x:
+#         print(i)
+
+# Напишите программу, на вход которой подаётся прямоугольная матрица в виде 
+# последовательности строк. После последней строки матрицы идёт строка, содержащая 
+# только строку "end" (без кавычек, см. Sample Input).
+
+# Программа должна вывести матрицу того же размера, у которой каждый элемент в 
+# позиции i, j равен сумме элементов первой матрицы на позициях 
+# (i-1, j), (i+1, j), (i, j-1), (i, j+1). У крайних символов соседний элемент 
+# находится с противоположной стороны матрицы.
+
+# В случае одной строки/столбца элемент сам себе является соседом по соответствующему 
+# направлению.
+# Sample Input 1:
+# 9 5 3
+# 0 7 -1
+# -5 2 9
+# end
+# Sample Output 1:
+# 3 21 22
+# 10 6 19
+# 20 16 -1
+
+matrix = []
+secondMatrix = []
+while True:
+    row = [i for i in input().split()]
+    if row[0] == 'end':
+        break
+    else:
+        for i in range(len(row)):
+            row[i] = int(row[i])
+    matrix += [row]        
+print(matrix)
+
+for i in range(len(matrix)): 
+    for j in range(len(matrix[i])): 
+        secondMatrix[i][j] = matrix[i-1][j] + matrix[i+1-len(matrix[i])][j] + matrix[j][j-1] + matrix[i][j+1-len(matrix[i])]
+print(secondMatrix)
+
+# if a[i][j] == 0:   # ячейка без мины
+#             for di in range(-1, 2):   # перебираем соседние строки (просто цифры -1 0 1)
+#                 for dj in range(-1, 2):   # перебираем соседние столбцы (просто цифры -1 0 1)
+#                     ai = i + di     # координата по строке
+#                     aj = j + dj     # координата по столбцу
+#                     if 0 <= ai < n and 0 <= aj < m and a[ai][aj] == -1:   # проверка вхождения в диапазон и мины по соседству
+#                         a[i][j] += 1
+
+# matrix = []
+# while True:
+#     row = input()
+#     if row == 'end':
+#         break
+#     for i in range(len(row)):
+#         row[i] = int(row[i])
+#     print(row)
+#     matrix += row
+#     print(matrix)
+# print(row)
+
+# n = int(input()) 
+# a = []
+# for i in range(n):
+#     row = input().split()
+#     for i in range(len(row)):
+#         row[i] = int(row[i])
+#     a.append(row)
