@@ -817,3 +817,58 @@
 # print('a - ', a)
 # print('b - ', b)
 
+
+# Выведите таблицу размером n×n, заполненную числами от 1 до n^2 
+
+# по спирали, выходящей из левого верхнего угла и закрученной по часовой стрелке, как показано в примере (здесь n=5):
+# Sample Input:
+# 5
+# Sample Output:
+
+# 1  2  3  4  5
+# 16 17 18 19 6
+# 15 24 25 20 7
+# 14 23 22 21 8
+# 13 12 11 10 9
+
+Моё решение:
+n = int(input())
+if n > 1:
+    matrix = [[0] * n for i in range(n)]
+    i = 1
+    start = 0
+    count = int((n)//2)
+    lenght = int(n)
+    n -= 1
+    while count:
+        for j in range(n):
+            matrix[start][start+j] = i
+            i += 1
+
+        for j in range(n):
+            matrix[start+j][-1-start] = i
+            i += 1
+
+        for j in range(n):
+            matrix[-1-start][-1-j-start] = i
+            i += 1
+
+        for j in range(n):
+            matrix[-1-start-j][start] = i
+            i += 1
+
+        n -= 2
+        start += 1
+        count -= 1
+    center = lenght//2
+    if lenght%2 == 1:
+        matrix[center][center] = lenght**2
+    
+    for j in range(lenght):
+        for k in range(lenght):
+            print(matrix[j][k], end="  ")
+        print()
+else:
+    print(n)
+
+
