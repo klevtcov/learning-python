@@ -792,47 +792,28 @@
 # 10 6 19
 # 20 16 -1
 
-matrix = []
-secondMatrix = []
-while True:
-    row = [i for i in input().split()]
-    if row[0] == 'end':
-        break
-    else:
-        for i in range(len(row)):
-            row[i] = int(row[i])
-    matrix += [row]        
-print(matrix)
-
-for i in range(len(matrix)): 
-    for j in range(len(matrix[i])): 
-        secondMatrix[i][j] = matrix[i-1][j] + matrix[i+1-len(matrix[i])][j] + matrix[j][j-1] + matrix[i][j+1-len(matrix[i])]
-print(secondMatrix)
-
-# if a[i][j] == 0:   # ячейка без мины
-#             for di in range(-1, 2):   # перебираем соседние строки (просто цифры -1 0 1)
-#                 for dj in range(-1, 2):   # перебираем соседние столбцы (просто цифры -1 0 1)
-#                     ai = i + di     # координата по строке
-#                     aj = j + dj     # координата по столбцу
-#                     if 0 <= ai < n and 0 <= aj < m and a[ai][aj] == -1:   # проверка вхождения в диапазон и мины по соседству
-#                         a[i][j] += 1
-
+# Моё решение:
 # matrix = []
 # while True:
-#     row = input()
-#     if row == 'end':
+#     row = [i for i in input().split()]
+#     if row[0] == 'end':
 #         break
-#     for i in range(len(row)):
-#         row[i] = int(row[i])
-#     print(row)
-#     matrix += row
-#     print(matrix)
-# print(row)
+#     else:
+#         for i in range(len(row)):
+#             row[i] = int(row[i])
+#     matrix += [row]    
+#         # matrix.append(row)
 
-# n = int(input()) 
-# a = []
-# for i in range(n):
-#     row = input().split()
-#     for i in range(len(row)):
-#         row[i] = int(row[i])
-#     a.append(row)
+# for i in range(len(matrix)): 
+#     for j in range(len(matrix[i])): 
+#         print((matrix[i-1][j] + matrix[i+1-len(matrix)][j] + matrix[i][j-1] + matrix[i][j+1-len(matrix[i])]), end=' ')
+#     print()
+
+# matrix.append([int(i) for i in row.split()])
+
+# a = [0, 1, 2, 3, 4]
+# b = a
+# a = a[0:3]
+# print('a - ', a)
+# print('b - ', b)
+
