@@ -831,44 +831,47 @@
 # 14 23 22 21 8
 # 13 12 11 10 9
 
-Моё решение:
-n = int(input())
-if n > 1:
-    matrix = [[0] * n for i in range(n)]
-    i = 1
-    start = 0
-    count = int((n)//2)
-    lenght = int(n)
-    n -= 1
-    while count:
-        for j in range(n):
-            matrix[start][start+j] = i
-            i += 1
+# Моё решение:
+# n = int(input())
+# if n > 1:
+#     matrix = [[0] * n for i in range(n)]
+#     i = 1
+#     start = 0
+#     count = int((n)//2)
+#     lenght = int(n)
+#     n -= 1
+#     while count:
+#         for j in range(n):
+#             matrix[start][start+j] = i
+#             i += 1
 
-        for j in range(n):
-            matrix[start+j][-1-start] = i
-            i += 1
+#         for j in range(n):
+#             matrix[start+j][-1-start] = i
+#             i += 1
 
-        for j in range(n):
-            matrix[-1-start][-1-j-start] = i
-            i += 1
+#         for j in range(n):
+#             matrix[-1-start][-1-j-start] = i
+#             i += 1
 
-        for j in range(n):
-            matrix[-1-start-j][start] = i
-            i += 1
+#         for j in range(n):
+#             matrix[-1-start-j][start] = i
+#             i += 1
 
-        n -= 2
-        start += 1
-        count -= 1
-    center = lenght//2
-    if lenght%2 == 1:
-        matrix[center][center] = lenght**2
+#         n -= 2
+#         start += 1
+#         count -= 1
+#     center = lenght//2
+#     if lenght%2 == 1:
+#         matrix[center][center] = lenght**2
     
-    for j in range(lenght):
-        for k in range(lenght):
-            print(matrix[j][k], end="  ")
-        print()
-else:
-    print(n)
+#     for j in range(lenght):
+#         for k in range(lenght):
+#             print(matrix[j][k], end="  ")
+#         print()
+# else:
+#     print(n)
 
+def f(n):
+    return n * 10 + 5
 
+print(f(f(f(10))))
