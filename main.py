@@ -907,18 +907,43 @@
 # modify_list(lst)
 # print(lst)               # [5, 4]
 
-Мой вариант:
+# Мой вариант:
 
-def modify_list(l):
-    i = 0
-    while i < len(l):
-        if l[i] % 2 == 1:
-            l.pop(i)
-        else:
-            l[i] = int(l[i] / 2)
-            i += 1
+# def modify_list(l):
+#     i = 0
+#     while i < len(l):
+#         if l[i] % 2 == 1:
+#             l.pop(i)
+#         else:
+#             l[i] = int(l[i] / 2)
+#             i += 1
 
-Подсмотренный:
-def modify_list(l):
-    l[:] = [i//2 for i in l if not i % 2]
+# Подсмотренный:
+# def modify_list(l):
+#     l[:] = [i//2 for i in l if not i % 2]
+
+from typing_extensions import ParamSpecArgs
+
+
+Множдества:
+
+s = set()
+basket = {'apple', 'orange', 'banana', 'orange', 'pear'}
+
+'orange' in basket # True
+'python' in basket # False
+
+s.add(element)
+s.remove(element) #ошибка, если элемента нет в множестве
+s.discard(element) # удалит без ошибки
+s.clear()
+
+basket = {'apple', 'orange', 'banana', 'orange', 'pear'}
+for x in basket:
+    print(x)
+banana
+orange
+pear
+apple
+
 
