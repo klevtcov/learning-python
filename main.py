@@ -922,28 +922,86 @@
 # def modify_list(l):
 #     l[:] = [i//2 for i in l if not i % 2]
 
-from typing_extensions import ParamSpecArgs
+# from typing_extensions import ParamSpecArgs
 
 
-Множдества:
+# Множдества:
 
-s = set()
-basket = {'apple', 'orange', 'banana', 'orange', 'pear'}
+# s = set()
+# basket = {'apple', 'orange', 'banana', 'orange', 'pear'}
 
-'orange' in basket # True
-'python' in basket # False
+# 'orange' in basket # True
+# 'python' in basket # False
 
-s.add(element)
-s.remove(element) #ошибка, если элемента нет в множестве
-s.discard(element) # удалит без ошибки
-s.clear()
+# s.add(element)
+# s.remove(element) #ошибка, если элемента нет в множестве
+# s.discard(element) # удалит без ошибки
+# s.clear()
 
-basket = {'apple', 'orange', 'banana', 'orange', 'pear'}
-for x in basket:
-    print(x)
-banana
-orange
-pear
-apple
+# basket = {'apple', 'orange', 'banana', 'orange', 'pear'}
+# for x in basket:
+#     print(x)
+# banana
+# orange
+# pear
+# apple
 
+# Словари
 
+# dict, {}
+# d = {'a':100, 10:150}
+# print(d['a']) # 100
+# print(d[10]) # 150
+
+# dictionary = {}
+
+# key in dictionary # True/False
+# key not in dictionary # True/False
+# dictionary[key] = value # добавить ключ + значение
+# dictionary[key] # если нет - будет ошиька
+# dictionary.get(key) # ошибки не будет, вернут None
+# del dictionary[key]
+
+# d = {'C':14, 'A':12, 'T':9, 'G':18}
+# for key in d:
+#     print(key, end='') # G C A T
+# for key in d.keys():
+#     print(key, end='') # G C A T
+# for value in d.values:
+#     print(value, end='') # 9 18 12 14
+# for key, values in d.items():
+#     print(key, values, end=';') # G 18; C 14; A 12; T 9
+
+# Напишите функцию update_dictionary(d, key, value), которая принимает на вход словарь d и два числа: 
+# key и value.
+
+# Если ключ key есть в словаре d, то добавьте значение value в список, который хранится по 
+# этому ключу.
+# Если ключа key нет в словаре, то нужно добавить значение в список по ключу 2 * key2. Если и 
+# ключа 2 * key2 нет, то нужно добавить ключ 2 * key2 в словарь и сопоставить ему список из 
+# переданного элемента [value].
+
+# Требуется реализовать только эту функцию, кода вне её не должно быть.
+# Функция не должна вызывать внутри себя функции input и print.
+
+# Пример работы функции:
+
+d = {}
+
+# print(update_dictionary(d, 1, -1))  # None
+# print(d)                            # {2: [-1]}
+# update_dictionary(d, 2, -2)
+# print(d)                            # {2: [-1, -2]}
+# update_dictionary(d, 1, -3)
+# print(d)                            # {2: [-1, -2, -3]}
+
+def update_dictionary(d, key, value):
+    if key in d:
+        d[key].append(value)
+    else:
+        d[key*2] = [value]
+
+update_dictionary(d, 1, -1)
+print(d)
+update_dictionary(d, 1, 0)
+print(d)
