@@ -1129,29 +1129,61 @@
 # a3b4c2e10b1
 # aaabbbbcceeeeeeeeeeb
 
-with open('dataset_3363_2.txt') as inf:
-    a = str(inf.readline())
-print(a)
-#a = "a3b4c2e10b1"
-letters = []
-numbers = []
-decompressed = ''
-i = 0
-while i < len(a):
-    if a[i] >= 'A':
-        letters += a[i]
-    else:
-        if a[i-1] < 'A':
-            numbers[-1] += a[i]
-        else:
-            numbers += a[i]
-    i += 1
+# Моё решение:
+# with open('dataset_3363_2.txt') as inf:
+#     a = str(inf.readline())
+# print(a)
+# letters = []
+# numbers = []
+# decompressed = ''
+# i = 0
+# while i < len(a):
+#     if a[i] >= 'A':
+#         letters += a[i]
+#     else:
+#         if a[i-1] < 'A':
+#             numbers[-1] += a[i]
+#         else:
+#             numbers += a[i]
+#     i += 1
 
-i = 0
-while i < len(letters):
-    decompressed += letters[i] * int(numbers[i])
-    i += 1
+# i = 0
+# while i < len(letters):
+#     decompressed += letters[i] * int(numbers[i])
+#     i += 1
 
-with open('out.txt', 'w') as ouf:
-    ouf.write(decompressed)
-print(decompressed)
+# with open('out.txt', 'w') as ouf:
+#     ouf.write(decompressed)
+# print(decompressed)
+
+# Другие решения:
+# strin = open("dataset_3363_2.txt", 'r').readline().strip()  # считываем сразу в строку, потому что она тут одна
+# lst = []  # создаем пустой список, в который будем пихать буквы с циферками по типу [a10, b2...]
+# for i in range(len(strin)):
+#     if strin[i].isalpha():  # проверяем каждый символ в строке на букву
+#         lst.append(strin[i])  # записываем в список буковку
+#     else:
+#         lst[-1] += strin[i] # бомбим рядом с буквой ее циферки
+# for symb in lst:
+#     print(symb[0] * int(symb[1:]), end='') # печатаем буковку (нулевой символ в каждом элементе списка) по количеству ее циферок (остальные символы, преобразованные к числу в соответствующем элементе списка); можно заменить на вывод в файл
+
+# Недавно мы считали для каждого слова количество его вхождений в строку. Но на все слова может быть 
+# не так интересно смотреть, как, например, на наиболее часто используемые.
+
+# Напишите программу, которая считывает текст из файла (в файле может быть больше одной строки) 
+# и выводит самое частое слово в этом тексте и через пробел то, сколько раз оно встретилось. Если 
+# таких слов несколько, вывести лексикографически первое (можно использовать оператор < для строк).
+
+# В качестве ответа укажите вывод программы, а не саму программу.
+
+# Слова, написанные в разных регистрах, считаются одинаковыми.
+
+# ls = input().lower().split()
+# d = {a : ls.count(a) for a in set(ls)} # Тут считаем при сохранении в словарь
+# for key, values in d.items():
+#     print(key, values)
+
+# strin = open("dataset_3363_3.txt", 'r').read().lower().split()
+# d = {a : strin.count(a) for a in set(strin)}
+# keymax = max(d, key=d.get)
+# print(keymax, d[keymax])
