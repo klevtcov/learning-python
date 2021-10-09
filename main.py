@@ -986,22 +986,20 @@
 
 # Пример работы функции:
 
-d = {}
+# d = {}
 
-# print(update_dictionary(d, 1, -1))  # None
-# print(d)                            # {2: [-1]}
-# update_dictionary(d, 2, -2)
-# print(d)                            # {2: [-1, -2]}
-# update_dictionary(d, 1, -3)
-# print(d)                            # {2: [-1, -2, -3]}
+# # print(update_dictionary(d, 1, -1))  # None
+# # print(d)                            # {2: [-1]}
+# # update_dictionary(d, 2, -2)
+# # print(d)                            # {2: [-1, -2]}
+# # update_dictionary(d, 1, -3)
+# # print(d)                            # {2: [-1, -2, -3]}
 
-def update_dictionary(d, key, value):
-    if key in d:
-        d[key].append(value)
-    else:
-        d[key*2] = [value]
-
-update_dictionary(d, 1, -1)
-print(d)
-update_dictionary(d, 1, 0)
-print(d)
+# Моё решение:
+# def update_dictionary(d, key, value):
+#     if key in d:
+#         d[key].append(value)
+#     elif key not in d and key*2 not in d:
+#         d[key*2] = [value]
+#     else:
+#         d[key*2].append(value)
