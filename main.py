@@ -1219,25 +1219,25 @@
 # 71.666666667
 # 81.0 84.0 85.666666667
 
-Моё решение:
-ls = []
-with open('dataset_3363_4 (1).txt', encoding='utf-8') as inf:
-    for line in inf:
-        ls += [line.strip().split(';')]
-avrg = ['Средние', 0, 0, 0]
+# Моё решение:
+# ls = []
+# with open('dataset_3363_4 (1).txt', encoding='utf-8') as inf:
+#     for line in inf:
+#         ls += [line.strip().split(';')]
+# avrg = ['Средние', 0, 0, 0]
 
-for x in ls:
-    x.append((int(x[1]) + int(x[2]) + int(x[3])) / 3)
-    for j in range(1,len(x)-1):
-        avrg[j] += int(x[j])
-for i in range(1, len(avrg)):
-    avrg[i] = avrg[i] / (len(ls))
+# for x in ls:
+#     x.append((int(x[1]) + int(x[2]) + int(x[3])) / 3)
+#     for j in range(1,len(x)-1):
+#         avrg[j] += int(x[j])
+# for i in range(1, len(avrg)):
+#     avrg[i] = avrg[i] / (len(ls))
 
-with open('out2.txt', 'w') as ouf:
-    for x in ls:
-        ouf.write(str(x[4]) + '\n')
-    for i in range(1, len(avrg)):
-        ouf.write(str(avrg[i]) + ' ')
+# with open('out2.txt', 'w') as ouf:
+#     for x in ls:
+#         ouf.write(str(x[4]) + '\n')
+#     for i in range(1, len(avrg)):
+#         ouf.write(str(avrg[i]) + ' ')
 
 
 # Для тех, кто хочет сократить свой код :) написал небольшое руководство по [list comprehension]
@@ -1285,3 +1285,17 @@ with open('out2.txt', 'w') as ouf:
 
 # надеюсь, вам было понятно и интересно
 # желаю успехов в учёбе!!!
+
+
+# Модули
+# https://docs.python.org/3/library/
+
+# Напишите программу, которая подключает модуль math и, используя значение числа \pi из этого модуля, 
+# находит для переданного ей на стандартный ввод радиуса круга периметр этого круга и выводит его на 
+# стандартный вывод.
+
+import math
+r = int(input())
+print(2 * math.pi * r)
+
+from math 
