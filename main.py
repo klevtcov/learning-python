@@ -1340,3 +1340,52 @@
 # print(r.text)
 
 # print(r.cookies['example_cookies_name']) #Использование cookies полученных на сервере
+
+
+# Скачайте файл. В нём указан адрес другого файла, который нужно скачать с использованием 
+# модуля requests и посчитать число строк в нём.
+
+# Используйте функцию get для получения файла (имеет смысл вызвать метод strip к 
+# передаваемому параметру, чтобы убрать пробельные символы по краям).
+
+# После получения файла вы можете проверить результат, обратившись к полю text. Если 
+# результат работы скрипта не принимается, проверьте поле url на правильность. Для подсчёта 
+# количества строк разбейте текст с помощью метода splitlines.
+
+# В поле ответа введите одно число или отправьте файл, содержащий одно число.
+
+# Моё решение:
+# import requests
+# url = 'https://stepic.org/media/attachments/course67/3.6.2/811.txt'
+# fl = requests.get(url)
+# fil = fl.text.splitlines()
+# print(len(fil))
+
+# import requests
+# with open('dataset_3378_2.txt') as inf:
+#     r = requests.get(inf.readline().strip())
+#     print(len(r.text.splitlines()))
+
+
+# Имеется набор файлов, каждый из которых, кроме последнего, содержит имя следующего файла.
+# Первое слово в тексте последнего файла: "We".
+
+# Скачайте предложенный файл. В нём содержится ссылка на первый файл из этого набора.
+
+# Все файлы располагаются в каталоге по адресу:
+# https://stepic.org/media/attachments/course67/3.6.3/
+
+# Загрузите содержимое последнего файла из набора, как ответ на это задание.
+
+import requests
+with open('dataset_3378_3.txt') as inf:
+    r = inf.readline().strip()
+nxt = 'https://stepic.org/media/attachments/course67/3.6.3/' + requests.get(r).text
+print(r)
+print(nxt)
+while not nxt.startwith('We'):
+    
+
+
+# str.startswith(prefix[, start[, end]])
+# https://stepic.org/media/attachments/course67/3.6.3/699991.txt
