@@ -1320,3 +1320,23 @@
 # import sys
 # print(*sys.argv[1:])
 
+# Пакет requests
+
+# https://3.python-requests.org/user/quickstart/
+
+# import requests
+# r = requests.get('http://example.com') # простой GET запрос
+# print(r.text) # вывод ответа от сервера
+
+# url = 'http://example.com'
+# par = {'key1': 'value1', 'key2': 'value2'}
+# r = requests.get(url, params=par) # передача параметров в запрос
+# print(r.url) # сформированный урл с учетом параметров GET запроса
+# # http://example.com/?key1=value1&key2=value2
+
+# url = 'http://httpbin.org/cookies'
+# cookies = {'cookies_are': 'working'}
+# r = requests.get(url, cookies=cookies) # отправка сформированных кукисов на сервер
+# print(r.text)
+
+# print(r.cookies['example_cookies_name']) #Использование cookies полученных на сервере
