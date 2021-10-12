@@ -1377,15 +1377,27 @@
 
 # Загрузите содержимое последнего файла из набора, как ответ на это задание.
 
-import requests
-with open('dataset_3378_3.txt') as inf:
-    r = inf.readline().strip()
-nxt = 'https://stepic.org/media/attachments/course67/3.6.3/' + requests.get(r).text
-print(r)
-print(nxt)
-while not nxt.startwith('We'):
-    
+# Мое решение:
+# import requests
+# def make_url(x):
+#     return 'https://stepic.org/media/attachments/course67/3.6.3/' + x
+# with open('dataset_3378_3.txt') as inf:
+#     r = inf.readline().strip()
+# print(r)
+# print()
+# nxt = make_url(requests.get(r).text)
+
+# print(nxt)
+# while not nxt.startswith('We'):
+#     print('---')
+#     nxt = make_url(requests.get(nxt).text)
+#     print('New url: ', nxt)
+# print('Finally: ', nxt.text)
 
 
-# str.startswith(prefix[, start[, end]])
-# https://stepic.org/media/attachments/course67/3.6.3/699991.txt
+# import requests
+# name = '699991.txt'
+# url = 'https://stepic.org/media/attachments/course67/3.6.3/'
+# while 'We' not in name[:2]:
+#     name = requests.get(url + name).text
+# print(name)
