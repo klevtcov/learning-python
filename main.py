@@ -1427,19 +1427,42 @@
 # Зенит:2 1 0 1 3
 # Локомотив:2 2 0 0 6
 
+Моё решение: 
 n = int(input())
 ls =[]
 while n > 0:
     ls += [input().strip().split(';')]
     n -= 1
 
-s = set()
+s = set() # создаём пустое множество и вносим туда все значения команд 
 for i in ls:
     s.add(i[0])
     s.add(i[2])
 
-teams = {}
+teams = {i: [0 for j in range(5)] for i in s} # создаём словарь с названиями команд в качестве ключа и списком из пяти значений в качестве значения
 
-print(ls)
-print(s)
-print(teams)
+for x in ls:
+    if int(x[1]) > int(x[3]):
+        teams[x[0]][1] += 1
+        teams[x[0]][4] += 3
+        teams[x[2]][3] += 1
+    elif int(x[1]) < int(x[3]):
+        teams[x[2]][1] += 1
+        teams[x[2]][4] += 3
+        teams[x[0]][3] += 1
+    else:
+        teams[x[0]][2] += 1
+        teams[x[0]][4] += 1
+        teams[x[2]][2] += 1
+        teams[x[2]][4] += 1
+    teams[x[0]][0] += 1
+    teams[x[2]][0] += 1
+
+for x in s:
+    print(x, end=':')
+    for i in range(5):
+        print(teams[x][i], end=' ')
+    print()
+
+# ---
+
