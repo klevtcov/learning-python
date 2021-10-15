@@ -1643,26 +1643,64 @@
 # чего n строк с самими командами. Вывести нужно два числа в одну строку: первую и 
 # вторую координату конечной точки черепашки. Все координаты целочисленные.
 
-Моё решение:
-destination = [0, 0]
-for comand in range(int(input())):
-    direction, distance  = input().split()
-    distance = int(distance)
-    if direction == 'север':
-        destination[1] += distance
-    elif direction == 'юг':
-        destination[1] -= distance
-    elif direction == 'запад':
-        destination[0] -= distance
-    elif direction == 'восток':
-        destination[0] += distance
-    else:
-        print('Wrong direction')
-print(*destination)
+# Моё решение:
+# destination = [0, 0]
+# for comand in range(int(input())):
+#     direction, distance  = input().split()
+#     distance = int(distance)
+#     if direction == 'север':
+#         destination[1] += distance
+#     elif direction == 'юг':
+#         destination[1] -= distance
+#     elif direction == 'запад':
+#         destination[0] -= distance
+#     elif direction == 'восток':
+#         destination[0] += distance
+#     else:
+#         print('Wrong direction')
+# print(*destination)
 
-Лучшее:
-dict = {'север': 0, 'юг': 0, 'запад': 0, 'восток': 0}
-for _ in range(int(input())):
-    key, value = input().split()
-    dict[key] += int(value)
-print(dict['восток'] - dict['запад'], dict['север'] - dict['юг'])
+# Лучшее:
+# dict = {'север': 0, 'юг': 0, 'запад': 0, 'восток': 0}
+# for _ in range(int(input())):
+#     key, value = input().split()
+#     dict[key] += int(value)
+# print(dict['восток'] - dict['запад'], dict['север'] - dict['юг'])
+
+# Дан файл с таблицей в формате TSV с информацией о росте школьников разных классов.
+# Напишите программу, которая прочитает этот файл и подсчитает для каждого класса средний 
+# рост учащегося.
+# Файл состоит из набора строк, каждая из которых представляет собой три поля:
+# Класс Фамилия Рост
+# Класс обозначается только числом. Буквенные модификаторы не используются. Номер класса 
+# может быть от 1 до 11 включительно. В фамилии нет пробелов, а в качестве роста 
+# используется натуральное число, но при подсчёте среднего требуется вычислить значение 
+# в виде вещественного числа.
+
+# Выводить информацию о среднем росте следует в порядке возрастания номера класса (для 
+# классов с первого по одиннадцатый). Если про какой-то класс нет информации, необходимо 
+# вывести напротив него прочерк.
+
+# 6	Вяххи	159
+# 11	Федотов	172
+# 7	Бондарев	158
+# 6	Чайкина	153
+
+# 6 156.0
+# 7 158.0
+# --
+# 11 172.0
+
+Моё решение:
+dict = {a:[0, 0] for a in range(1,12)}
+with open('dataset_3380_5.txt', encoding='utf-8') as inf:
+    for line in inf:
+        key, name, value = line.strip().split('\t')
+        dict[int(key)][0] += int(value)
+        dict[int(key)][1] += 1
+for key, value in dict.items():
+    print(key, end=' ')
+    if value[0] == 0:
+        print('-')
+    else:
+        print(float(value[0] / value[1]))
